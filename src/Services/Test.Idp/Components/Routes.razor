@@ -1,0 +1,12 @@
+﻿@using Test.Idp.Components.Account.Shared
+@using Test.Idp.Components.Layout
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)">
+            <NotAuthorized>
+                <RedirectToLogin/>
+            </NotAuthorized>
+        </AuthorizeRouteView>
+        <FocusOnNavigate Selector="h1" RouteData="routeData"/>
+    </Found>
+</Router>

@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using Test.Idp.Data.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+
+@if (_externalLogins.Length is 0)
+{
+    <p>
+        No external authentication providers configured.
+    </p>
+}
+else
+{
+    <form action="Account/PerformExternalLogin" method="post">
+        <div>
+            <AntiforgeryToken/>
+            <input type="hidden" name="ReturnUrl" value="@ReturnUrl"/>
+            <p>
+                @foreach (var provider in _externalLogins)
+                {
+                    <button type="submit" name="provider" value="@provider.Name"
+                            title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                }
+            </p>
+        </div>
+    </form>
+}
+
+@code {
+    private AuthenticationScheme[] _externalLogins = [];
+
+    [SupplyParameterFromQuery] private string? ReturnUrl { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _externalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToArray();
+    }
+
+}
