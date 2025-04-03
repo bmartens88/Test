@@ -8,10 +8,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Orchestration\Test.ServiceDefaults\Test.ServiceDefaults.csproj" />
+      <ProjectReference Include="..\Test.Web.Client\Test.Web.Client.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.3" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.3" />
+      <PackageReference Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="9.1.0" />
     </ItemGroup>
 
 </Project>

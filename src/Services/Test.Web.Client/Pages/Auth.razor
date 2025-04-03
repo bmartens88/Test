@@ -1,0 +1,39 @@
+﻿@page "/Auth"
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
+
+<h1>You are authorized!</h1>
+
+<AuthorizeView>
+    Hello @context.User.Identity?.Name!
+</AuthorizeView>
+
+@if (_claims.Any())
+{
+    <ul>
+        @foreach (var claim in _claims)
+        {
+            <li><b>@claim.Type:</b> @claim.Value</li>
+        }
+    </ul>
+}
+
+<NavLink href="/">Home</NavLink>
+
+@code{
+
+    private IEnumerable<Claim> _claims = [];
+
+    [CascadingParameter] private Task<AuthenticationState>? AuthState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (AuthState is null)
+            return;
+        var authState = await AuthState;
+        _claims = authState.User.Claims;
+    }
+
+}
