@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.AppHost", "src\Orchest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Idp", "src\Services\Test.Idp\Test.Idp.csproj", "{C8E84AA8-C073-415B-A94E-C9BC44361C1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api", "src\Services\Test.Api\Test.Api.csproj", "{E2A0D234-E115-4A0E-BAFC-16CC76857D2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Client", "src\Services\Test.Client\Test.Client.csproj", "{E2A0D234-E115-4A0E-BAFC-16CC76857D2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Source", "src\Services\Test.Source\Test.Source.csproj", "{20ABAA21-9292-400B-AA40-88F289BB9E2D}"
 EndProject

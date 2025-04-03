@@ -12,7 +12,7 @@ var idp = builder.AddProject<Projects.Test_Idp>("idp")
 
 var source = builder.AddProject<Projects.Test_Source>("source");
 
-var api = builder.AddProject<Projects.Test_Api>("api")
+var api = builder.AddProject<Projects.Test_Client>("client")
     .WithExternalHttpEndpoints()
     .WithReference(source);
 

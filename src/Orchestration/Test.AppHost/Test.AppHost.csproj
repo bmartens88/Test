@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Services\Test.Api\Test.Api.csproj" />
+      <ProjectReference Include="..\..\Services\Test.Client\Test.Client.csproj" />
       <ProjectReference Include="..\..\Services\Test.Idp\Test.Idp.csproj" />
       <ProjectReference Include="..\..\Services\Test.Source\Test.Source.csproj" />
     </ItemGroup>
