@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -34,18 +35,30 @@ builder.Services.AddAuthentication(opts =>
     .AddCookie();
 builder.Services.AddAuthorization();
 
+// HTTP Client setup
+builder.Services.AddHttpClient("sourceClient", client => { client.BaseAddress = new Uri("https://source"); });
+
 var app = builder.Build();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/", (ClaimsPrincipal user) =>
+app.MapGet("/", async (HttpContext context, IHttpClientFactory clientFactory, ClaimsPrincipal user) =>
     {
+        var accessToken = await context.GetTokenAsync("access_token");
+        var client = clientFactory.CreateClient("sourceClient");
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        var response = await client.GetFromJsonAsync<IEnumerable<WeatherForecast>>("/");
         var claims = user.Claims.Select(c => new { c.Type, c.Value }).ToList();
-        return TypedResults.Ok(claims);
+        return TypedResults.Ok(new { claims, response });
     })
     .RequireAuthorization(); // trigger auth flow
 
 app.MapDefaultEndpoints();
 
 app.Run();
+
+internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
