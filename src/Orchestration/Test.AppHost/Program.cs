@@ -10,7 +10,7 @@ var idp = builder.AddProject<Projects.Test_Idp>("idp")
     .WithReference(idpPostgres)
     .WithExternalHttpEndpoints();
 
-var source = builder.AddProject<Projects.Test_Source>("source");
+var source = builder.AddProject<Projects.Test_Api>("api");
 
 var api = builder.AddProject<Projects.Test_Web>("client")
     .WithExternalHttpEndpoints()

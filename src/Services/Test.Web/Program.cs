@@ -57,7 +57,7 @@ builder.Services.AddHttpContextAccessor();
 // When interacting with the api, use this code
 builder.Services.AddHttpClient<IWeatherForecaster, ServerWeatherForecaster>(httpClient =>
 {
-    httpClient.BaseAddress = new Uri("https://source");
+    httpClient.BaseAddress = new Uri("https://api");
 });
 
 var app = builder.Build();
@@ -86,7 +86,7 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(_Imports).Assembly);
 
 // When calling from the webassembly part, forward using this forwarding
-app.MapForwarder("/weather-forecast", "https://source", transformBuilder =>
+app.MapForwarder("/weather-forecast", "https://api", transformBuilder =>
 {
     transformBuilder.AddRequestTransform(async transformContext =>
     {

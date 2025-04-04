@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Idp", "src\Services\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Web", "src\Services\Test.Web\Test.Web.csproj", "{E2A0D234-E115-4A0E-BAFC-16CC76857D2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Source", "src\Services\Test.Source\Test.Source.csproj", "{20ABAA21-9292-400B-AA40-88F289BB9E2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api", "src\Services\Test.Api\Test.Api.csproj", "{20ABAA21-9292-400B-AA40-88F289BB9E2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Web.Client", "src\Services\Test.Web.Client\Test.Web.Client.csproj", "{72CA3666-946D-4C07-8DBD-6E3D1218A80F}"
 EndProject
