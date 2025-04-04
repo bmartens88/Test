@@ -34,6 +34,7 @@ builder.Services.AddAuthentication(opts =>
         opts.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
         opts.SaveTokens = true;
         opts.GetClaimsFromUserInfoEndpoint = true;
+        opts.TokenValidationParameters.NameClaimType = "name";
         opts.ClaimActions.MapUniqueJsonKey("favorite_color", "favorite_color");
     })
     .AddCookie();
