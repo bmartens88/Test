@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api.Modules.Users.Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api.Modules.Users.Application", "src\Services\Api\Modules\Users\Test.Api.Modules.Users.Application\Test.Api.Modules.Users.Application.csproj", "{E251CE0F-F4D7-4475-B357-A4F5857A86A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api.Common.Presentation", "src\Services\Api\Common\Test.Api.Common.Presentation\Test.Api.Common.Presentation.csproj", "{F1FD0ECA-8173-49D1-9B1A-97FC88298EA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,7 @@ Global
 		{500F8E5C-3AAB-4403-9589-5C49124B6E90} = {7AAD591E-6D36-472B-B67A-80515D1686FB}
 		{33AD51C1-23C1-4AF6-BD2A-610D8B756866} = {500F8E5C-3AAB-4403-9589-5C49124B6E90}
 		{E251CE0F-F4D7-4475-B357-A4F5857A86A4} = {500F8E5C-3AAB-4403-9589-5C49124B6E90}
+		{F1FD0ECA-8173-49D1-9B1A-97FC88298EA9} = {9806DE27-83E8-4620-B3F7-696D4E0FD3B8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{227E3AAB-4A0E-4874-A5D8-DDBA914F9154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -105,5 +108,9 @@ Global
 		{E251CE0F-F4D7-4475-B357-A4F5857A86A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E251CE0F-F4D7-4475-B357-A4F5857A86A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E251CE0F-F4D7-4475-B357-A4F5857A86A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1FD0ECA-8173-49D1-9B1A-97FC88298EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FD0ECA-8173-49D1-9B1A-97FC88298EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FD0ECA-8173-49D1-9B1A-97FC88298EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FD0ECA-8173-49D1-9B1A-97FC88298EA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
